@@ -208,7 +208,7 @@ public inherited sharing class DAL { // RepositoryService ACL
 
   private inherited sharing class DALImpl implements IDAL {
     public List<Database.SaveResult> insertRecords(final List<SObject> records) {
-      return Database.insert(records, new Database.DmlOptions());
+      return Database.insert(records);
     }
 
     public List<Database.SaveResult> insertRecordsPartially(final List<SObject> records) {
@@ -222,7 +222,7 @@ public inherited sharing class DAL { // RepositoryService ACL
     }
 
     public List<Database.SaveResult> insertRecords(final List<SObject> records, AccessLevel accessLevel) {
-      return Database.insert(records, new Database.DmlOptions(), accessLevel);
+      return Database.insert(records, accessLevel);
     }
 
     public List<Database.SaveResult> insertRecordsPartially(final List<SObject> records, AccessLevel accessLevel) {
@@ -236,7 +236,7 @@ public inherited sharing class DAL { // RepositoryService ACL
     }
 
     public List<Database.SaveResult> updateRecords(final List<SObject> records) {
-      return Database.update(records, new Database.DmlOptions());
+      return Database.update(records);
     }
 
     public List<Database.SaveResult> updateRecordsPartially(final List<SObject> records) {
@@ -250,7 +250,7 @@ public inherited sharing class DAL { // RepositoryService ACL
     }
 
     public List<Database.SaveResult> updateRecords(final List<SObject> records, AccessLevel accessLevel) {
-      return Database.update(records, new Database.DmlOptions(), accessLevel);
+      return Database.update(records, accessLevel);
     }
 
     public List<Database.SaveResult> updateRecordsPartially(final List<SObject> records, AccessLevel accessLevel) {
